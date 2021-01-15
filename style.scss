@@ -1,0 +1,143 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    transition: .3s ease;
+}
+
+.main{
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(230, 238, 238);
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+}
+
+.side-bar{
+    background-color: white;
+    height: 100%;
+    box-shadow: 2px 0 10px 2px rgba(0,0,0,0.1);
+
+    .home{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 0;
+        cursor: pointer;
+        img{
+            width: 80px;
+        }
+
+        h3{
+            margin: 10px 0 0 0;
+            font-weight: 300;
+        }
+    }
+
+    .side-con{
+        border-top: 1px solid darken(white, 10%);
+        min-width: 200px;
+        img{
+            width: 20px;
+        }
+        .side-items{
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            cursor: pointer;
+
+            .title{
+                font-weight: 400;
+                font-size: 14px;
+                color: darken(white, 50%);
+            }
+
+            img{
+                margin-right: 15px;
+            }
+
+            &:hover{
+                background-color: darken(white, 5%);
+                .title{
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+.container{
+    overflow: auto;
+    flex: 1;
+}
+
+.content{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#home{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    .cover{
+        height: 50vh;
+        width: 50vh;
+        border-radius: 50%;
+        box-shadow: 0 1px 10px rgba(0,0,0,0.05);
+        background-color: white;
+        overflow: hidden;
+        background-image: url('./assets/me.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .info{
+        text-align: center;
+        margin-top: 20px;
+
+        .title{
+            font-size: 50px;
+            font-family: 'Play', sans-serif;
+            color: rgb(9, 0, 128);
+        }
+
+        .desc{
+            font-size: 20px;
+        }
+
+        .con{
+            a{
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.heading{
+    background-color: #4586f7;
+    padding: 20px 30px;
+    font-weight: 200;
+    font-size: 30px;
+    color: white;
+    text-transform: uppercase;
+}
+
+#about{
+    height: 100vh;
+    p{
+        font-size: 20px;
+        line-height: 40px;
+        font-weight: 300;
+        color: darken(white, 80%);
+    }
+}
+
