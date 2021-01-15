@@ -132,7 +132,6 @@ html, body{
 }
 
 #about{
-    height: 100vh;
     p{
         font-size: 20px;
         line-height: 40px;
@@ -141,3 +140,64 @@ html, body{
     }
 }
 
+.component{
+    min-height: 100vh;
+}
+
+.experience-card{
+    background-color: white;
+    margin-bottom: 50px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+
+    .header{
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid darken($color: white, $amount: 10%);
+
+        img{
+            width: 100px;
+            margin-right: 30px;
+        }
+
+        .title{
+            font-size: 20px;
+        }
+        .role{
+            color: darken(white, 60%);
+        }
+    }
+
+    .body{
+        padding: 20px;
+        font-size: 15px;
+        line-height: 35px;
+    }
+
+    .footer{
+        padding: 20px;
+        font-size: 14px;
+        color: darken(white, 50%);
+    }
+}
+
+.project-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+    margin-bottom: 30px;
+
+    .project-card{
+        background-color: rgb(60, 0, 255);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+
+        .cover{
+            height: 200px;
+            background-color: white;
+        }
+
+        .context{
+            padding: 20px;
+        }
+    }
+}
