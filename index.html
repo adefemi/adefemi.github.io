@@ -11,25 +11,32 @@
 </head>
 <body>
     <div class="main">
-        <div class="side-bar">
-            <div class="home">
+        <div class="header-main mobile">
+            <img src="./assets/menu.svg" alt="" onclick="toggleSideBar()">
+            <div class="title">Adefemi Oseni</div>
+            <div class="role">Full Stack Developer</div>
+        </div>
+        
+        <div class="side-bar" id="sideBar">
+            
+            <div class="home" onclick="handleRoute('home')">
                 <img src="./assets/home.svg" alt="home">
                 <h3>Home</h3>
             </div>
             <div class="side-con">
-                <div class="side-items">
+                <div id="aboutLink" class="side-items" onclick="handleRoute('about')">
                     <img src="./assets/user.svg" alt="user">
                     <div class="title">About</div>
                 </div>
-                <div class="side-items">
+                <div id="experienceLink" class="side-items" onclick="handleRoute('experience')">
                     <img src="./assets/progress.svg" alt="progress">
                     <div class="title">Experience</div>
                 </div>
-                <div class="side-items">
+                <div id="projectsLink" class="side-items" onclick="handleRoute('projects')">
                     <img src="./assets/file1.svg" alt="projects">
                     <div class="title">Projects</div>
                 </div>
-                <div class="side-items">
+                <div id="skillsLink" class="side-items" onclick="handleRoute('skills')">
                     <img src="./assets/advance.svg" alt="skill">
                     <div class="title">Skills</div>
                 </div>
@@ -37,11 +44,11 @@
                     <img src="./assets/star.svg" alt="star">
                     <div class="title">Awards</div>
                 </div> -->
-                <div class="side-items">
+                <div id="educationLink" class="side-items" onclick="handleRoute('education')">
                     <img src="./assets/education.svg" alt="education">
                     <div class="title">Education</div>
                 </div>
-                <div class="side-items">
+                <div id="blogLink" class="side-items" onclick="handleRoute('blog')">
                     <img src="./assets/youtube.svg" alt="youtube">
                     <div class="title">Blog</div>
                 </div>
@@ -51,7 +58,8 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="overlay mobile" onclick="toggleSideBar()"></div>
+        <div id="containerMain" class="container" onscroll="handleScroll()">
             <div id="home">
                 <div class="cover"></div>
                 <div class="info">
@@ -194,12 +202,12 @@
                                 <div class="footer">
                                     <div class="cab">Lead</div>
                                     <div class="info">
-                                        <img src="./assets/stack.svg" alt="">
+                                        <img src="./assets/stack.svg" alt="" onclick="showStack('realtyprox')">
                                         <a href="https://www.realtyprox.co" target="_blank">View</a>
                                     </div>
                                 </div>
-                                <div class="stack">
-                                    <img src="./assets/close.svg" class="close" alt="close">
+                                <div class="stack" id="realtyprox">
+                                    <img src="./assets/close.svg" class="close" alt="close" onclick="closeStack('realtyprox')">
                                     <h3>Stacks</h3>
                                     <li>Frontend: React JS (for dashboard), PHP main page (for SEO)</li>
                                     <li>Backend: Django (REST-API), Postgres, RabbitMQ, Node js Socket Service</li>
@@ -219,12 +227,12 @@
                                 <div class="footer">
                                     <div class="cab">Lead</div>
                                     <div class="info">
-                                        <img src="./assets/stack.svg" alt="">
+                                        <img src="./assets/stack.svg" alt="" onclick="showStack('taskprox')">
                                         <a href="https://www.taskprox.com" target="_blank">View</a>
                                     </div>
                                 </div>
-                                <div class="stack">
-                                    <img src="./assets/close.svg" class="close" alt="close">
+                                <div class="stack" id="taskprox">
+                                    <img src="./assets/close.svg" class="close" alt="close" onclick="closeStack('taskprox')">
                                     <h3>Stacks</h3>
                                     <li>Frontend: React JS</li>
                                     <li>Backend: Django (GraphQl), Postgres, RabbitMQ, Node js Socket Service</li>
@@ -244,13 +252,14 @@
                                 <div class="footer">
                                     <div class="cab">Solo</div>
                                     <div class="info">
-                                        <img src="./assets/github.svg" alt="">
-                                        <img src="./assets/stack.svg" alt="">
+                                        <a href="https://github.com/adefemi/chatapi" target="_blank"><img src="./assets/github.svg" alt=""></a>
+                                        
+                                        <img src="./assets/stack.svg" alt="" onclick="showStack('chatapp')">
                                         <a href="https://chatapp.devtot.com" target="_blank">View</a>
                                     </div>
                                 </div>
-                                <div class="stack">
-                                    <img src="./assets/close.svg" class="close" alt="close">
+                                <div class="stack" id="chatapp">
+                                    <img src="./assets/close.svg" class="close" alt="close" onclick="closeStack('chatapp')">
                                     <h3>Stacks</h3>
                                     <li>Frontend: React JS</li>
                                     <li>Backend: Django (REST-API), Postgres, Node js Socket Service</li>
@@ -271,12 +280,12 @@
                                 <div class="footer">
                                     <div class="cab">Freelance</div>
                                     <div class="info">
-                                        <img src="./assets/stack.svg" alt="">
+                                        <img src="./assets/stack.svg" alt="" onclick="showStack('tyl')">
                                         <a href="https://www.tylgames.com" target="_blank">View</a>
                                     </div>
                                 </div>
-                                <div class="stack">
-                                    <img src="./assets/close.svg" class="close" alt="close">
+                                <div class="stack" id="tyl">
+                                    <img src="./assets/close.svg" class="close" alt="close" onclick="closeStack('tyl')">
                                     <h3>Stacks</h3>
                                     <li>Frontend: React JS</li>
                                 </div>
@@ -295,12 +304,12 @@
                                 <div class="footer">
                                     <div class="cab">Front-end</div>
                                     <div class="info">
-                                        <img src="./assets/stack.svg" alt="">
+                                        <img src="./assets/stack.svg" alt="" onclick="showStack('xtrawin')">
                                         <a href="https://xtrawin.accessbankplc.com" target="_blank">View</a>
                                     </div>
                                 </div>
-                                <div class="stack">
-                                    <img src="./assets/close.svg" class="close" alt="close">
+                                <div class="stack" id="xtrawin">
+                                    <img src="./assets/close.svg" class="close" alt="close" onclick="closeStack('xtrawin')">
                                     <h3>Stacks</h3>
                                     <li>Frontend: React JS</li>
                                 </div>
@@ -544,5 +553,6 @@
             </div>
         </div>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>

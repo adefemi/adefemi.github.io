@@ -2,7 +2,6 @@ html, body{
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    transition: .3s ease;
 }
 
 .main{
@@ -11,12 +10,89 @@ html, body{
     background-color: rgb(230, 238, 238);
     display: grid;
     grid-template-columns: 1fr 8fr;
+
+    @media screen and (max-width:768px){
+        display: block;
+        overflow: auto;
+    }
+}
+
+
+
+.header-main{
+    position: fixed;
+    background-color: white;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 -5px 10px 2px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    .role{
+        font-size: 12px;
+        font-weight: 300;
+        color: darken(white, 70%);
+        line-height: 15px;
+    }
+
+    img{
+        width: 26px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        left: 20px;
+
+    }
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: rgba(black, 0.3);
+    transition: .3s ease;
 }
 
 .side-bar{
     background-color: white;
     height: 100%;
     box-shadow: 2px 0 10px 2px rgba(0,0,0,0.1);
+
+    @media screen and (max-width:768px){
+        position: fixed;
+        width: 200px;
+        left: -200px;
+        top: 0;
+        bottom: 0;
+        z-index: 20;
+        transition: .5s ease;
+
+        &~.overlay{
+            visibility: hidden;
+        }
+
+        &.open{
+            left: 0;
+            &~.overlay{
+               visibility: visible;
+            }
+        }
+    }
 
     .home{
         width: 100%;
@@ -47,6 +123,7 @@ html, body{
             align-items: center;
             padding: 15px;
             cursor: pointer;
+            border-right: 3px solid transparent;
 
             .title{
                 font-weight: 400;
@@ -63,6 +140,10 @@ html, body{
                 .title{
                     color: black;
                 }
+            }
+
+            &.active{
+                border-right-color: rgb(1, 108, 112);
             }
         }
     }
@@ -98,6 +179,11 @@ html, body{
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+
+        @media screen and (max-width: 480px) {
+            width: 30vh;
+            height: 30vh;
+        }
     }
 
     .info{
@@ -108,21 +194,37 @@ html, body{
             font-size: 40px;
             color: rgb(9, 0, 128);
             font-weight: 300;
+
+            @media screen and (max-width: 480px) {
+                font-size: 30px;
+            }
         }
 
         .desc{
             font-size: 20px;
+
+            @media screen and (max-width: 480px) {
+                font-size: 16px;
+            }
         }
 
         .con{
             margin-top: 20px;
             img{
                 width: 30px;
+
+                @media screen and (max-width: 480px) {
+                    width: 20px;
+                }
             }
             a{
                 text-decoration: none;
                 font-weight: 300;
                 color: dodgerblue;
+
+                @media screen and (max-width: 480px) {
+                    font-size: 14px;
+                }
             }
 
             .contact-item{
@@ -151,8 +253,12 @@ html, body{
     p{
         font-size: 20px;
         line-height: 40px;
-        font-weight: 300;
+        font-weight: 400;
         color: darken(white, 80%);
+
+        @media screen and (max-width: 480px) {
+            font-size: 16px;
+        }
     }
 }
 
@@ -174,13 +280,25 @@ html, body{
         img{
             width: 100px;
             margin-right: 30px;
+
+            @media screen and (max-width: 480px) {
+                width: 50px;
+                margin-right: 20px;
+            }
         }
 
         .title{
             font-size: 20px;
+
+            @media screen and (max-width: 480px) {
+                font-size: 16px;
+            }
         }
         .role{
             color: darken(white, 60%);
+            @media screen and (max-width: 480px) {
+                font-size: 13px;
+            }
         }
     }
 
@@ -188,12 +306,20 @@ html, body{
         padding: 20px;
         font-size: 15px;
         line-height: 35px;
+
+        @media screen and (max-width: 480px) {
+            font-size: 13px;
+        }
     }
 
     .footer{
         padding: 20px;
         font-size: 14px;
         color: darken(white, 50%);
+
+        @media screen and (max-width: 480px) {
+            font-size: 12px;
+        }
     }
 }
 
@@ -202,6 +328,10 @@ html, body{
     grid-template-columns: 1fr 1fr;
     grid-gap: 2em;
     margin-bottom: 30px;
+
+    @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+    }
 
     .project-card{
         
@@ -255,7 +385,7 @@ html, body{
             visibility: hidden;
             opacity: 0;
 
-            &:show{
+            &.show{
                 visibility: visible;
                 opacity: 1;
             }
@@ -267,6 +397,10 @@ html, body{
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            
+            @media screen and (max-width: 480px) {
+                height: 200px;
+            }
         }
 
         .context{
@@ -281,11 +415,19 @@ html, body{
             font-size: 20px;
             font-weight: 300;
             text-transform: uppercase;
+
+            @media screen and (max-width: 480px) {
+                font-size: 16px;
+            }
         }
 
         p{
             color: darken(white, 60%);
             font-size: 14px;
+
+            @media screen and (max-width: 480px) {
+                font-size: 12px;
+            }
         }
 
         .footer{
@@ -309,14 +451,22 @@ html, body{
                     width: 16px;
                     margin-right: 20px;
                     cursor: pointer;
+
+                    @media screen and (max-width: 480px) {
+                        width: 13px;
+                    }
                 }
             }
 
             a{
                 text-decoration: none;
                 font-size: 14px;
-                font-weight: bold;
+                font-weight: 600;
                 color: rgb(55, 111, 200);
+
+                @media screen and (max-width: 480px) {
+                    font-size: 12px;
+                }
             }
         }
     }
@@ -341,6 +491,11 @@ html, body{
         grid-row-gap: 2em;
         img{
             width: 80px;
+
+            @media screen and (max-width: 480px) {
+                width: 50px;
+            }
+            
         }
         text-align: center;
 
@@ -375,8 +530,21 @@ html, body{
             font-weight: 400;
             color: darken(white, 60%);
         }
-    }
 
+        
+    }
+    @media screen and (max-width: 480px) {
+        .header{
+            font-size: 16px;
+        }
+        .local{
+            font-size: 12px;
+        }
+
+        li{
+            font-size: 13px;
+        }
+    }
     .body{
         padding: 20px;
     }
@@ -386,6 +554,11 @@ html, body{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2em;
+
+    @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+    }
+
 
     .blog-card{
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
@@ -402,5 +575,23 @@ html, body{
             text-decoration: none;
             color: rgb(0, 86, 143);
         }
+
+        @media screen and (max-width: 480px) {
+            iframe{
+                height: 200px;
+            }
+            .title{
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+
+.mobile{
+    display: none;
+
+    @media screen and (max-width:768px){
+        display: flex;
     }
 }
