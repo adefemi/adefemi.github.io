@@ -120,8 +120,8 @@ html, body {
 }
 
 #home .cover {
-  height: 50vh;
-  width: 50vh;
+  height: 40vh;
+  width: 40vh;
   border-radius: 50%;
   -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
           box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
@@ -139,17 +139,41 @@ html, body {
 }
 
 #home .info .title {
-  font-size: 50px;
-  font-family: 'Play', sans-serif;
+  font-size: 40px;
   color: #090080;
+  font-weight: 300;
 }
 
 #home .info .desc {
   font-size: 20px;
 }
 
+#home .info .con {
+  margin-top: 20px;
+}
+
+#home .info .con img {
+  width: 30px;
+}
+
 #home .info .con a {
   text-decoration: none;
+  font-weight: 300;
+  color: dodgerblue;
+}
+
+#home .info .con .contact-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+#home .info .con .contact-item img {
+  margin-right: 20px;
 }
 
 .heading {
@@ -228,6 +252,13 @@ html, body {
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .project-grid .project-card .stack {
@@ -282,12 +313,28 @@ html, body {
 }
 
 .project-grid .project-card .cover {
-  height: 200px;
+  height: 250px;
   background-color: #376fc8;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .project-grid .project-card .context {
   padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .project-grid .project-card .title {
@@ -298,6 +345,7 @@ html, body {
 
 .project-grid .project-card p {
   color: #666666;
+  font-size: 14px;
 }
 
 .project-grid .project-card .footer {
@@ -414,4 +462,30 @@ html, body {
 
 .edu-card .body {
   padding: 20px;
+}
+
+.blog-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
+}
+
+.blog-grid .blog-card {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.blog-grid .blog-card iframe {
+  border: none;
+}
+
+.blog-grid .blog-card .title {
+  display: block;
+  padding: 20px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #00568f;
 }

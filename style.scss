@@ -88,8 +88,8 @@ html, body{
     height: 100vh;
 
     .cover{
-        height: 50vh;
-        width: 50vh;
+        height: 40vh;
+        width: 40vh;
         border-radius: 50%;
         box-shadow: 0 1px 10px rgba(0,0,0,0.05);
         background-color: white;
@@ -105,9 +105,9 @@ html, body{
         margin-top: 20px;
 
         .title{
-            font-size: 50px;
-            font-family: 'Play', sans-serif;
+            font-size: 40px;
             color: rgb(9, 0, 128);
+            font-weight: 300;
         }
 
         .desc{
@@ -115,8 +115,24 @@ html, body{
         }
 
         .con{
+            margin-top: 20px;
+            img{
+                width: 30px;
+            }
             a{
                 text-decoration: none;
+                font-weight: 300;
+                color: dodgerblue;
+            }
+
+            .contact-item{
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+
+                img{
+                    margin-right: 20px;
+                }
             }
         }
     }
@@ -191,6 +207,8 @@ html, body{
         
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         position: relative;
+        display: flex;
+        flex-direction: column;
 
         .stack{
             position: absolute;
@@ -244,12 +262,19 @@ html, body{
         }
 
         .cover{
-            height: 200px;
+            height: 250px;
             background-color: rgb(55, 111, 200);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .context{
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1;
         }
 
         .title{
@@ -260,6 +285,7 @@ html, body{
 
         p{
             color: darken(white, 60%);
+            font-size: 14px;
         }
 
         .footer{
@@ -353,5 +379,28 @@ html, body{
 
     .body{
         padding: 20px;
+    }
+}
+
+.blog-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+
+    .blog-card{
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        background-color: white;
+
+        iframe{
+            border: none;
+        }
+
+        .title{
+            display: block;
+            padding: 20px;
+            font-size: 18px;
+            text-decoration: none;
+            color: rgb(0, 86, 143);
+        }
     }
 }
