@@ -69,8 +69,8 @@ html, body{
 }
 
 .container{
-    overflow: auto;
     flex: 1;
+    overflow: auto;
 }
 
 .content{
@@ -188,16 +188,170 @@ html, body{
     margin-bottom: 30px;
 
     .project-card{
-        background-color: rgb(60, 0, 255);
+        
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        position: relative;
+
+        .stack{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            background-color: rgba(white, 0.95);
+            padding: 20px;
+            box-sizing: border-box;
+
+            .close{
+                position: absolute;
+                right: 20px;
+                width: 15px;
+                cursor: pointer;
+            }
+
+            h3{
+                margin: 0 0 20px 0;
+                font-weight: 300;
+                font-size: 24px;
+            }
+
+            li{
+                list-style: none;
+                font-size: 14px;
+                margin-bottom: 10px;
+                padding-left: 20px;
+                position: relative;
+
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 4px;
+                    height: 4px;
+                    background-color: black;
+                    left: 0;
+                    top: 8px;
+                    border-radius: 4px;
+                }
+            }
+            visibility: hidden;
+            opacity: 0;
+
+            &:show{
+                visibility: visible;
+                opacity: 1;
+            }
+        }
 
         .cover{
             height: 200px;
-            background-color: white;
+            background-color: rgb(55, 111, 200);
         }
 
         .context{
             padding: 20px;
         }
+
+        .title{
+            font-size: 20px;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        p{
+            color: darken(white, 60%);
+        }
+
+        .footer{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+
+            .cab{
+                padding: 5px 20px;
+                font-size: 12px;
+                background-color: rgb(219, 219, 219);
+                border-radius: 20px;
+            }
+
+            .info{
+                display: flex;
+                align-items: center;
+
+                img{
+                    width: 16px;
+                    margin-right: 20px;
+                    cursor: pointer;
+                }
+            }
+
+            a{
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: bold;
+                color: rgb(55, 111, 200);
+            }
+        }
+    }
+}
+
+.skill-card{
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    background-color: white;
+    margin-bottom: 30px;
+
+    .header{
+        padding: 20px;
+        border-bottom: 1px solid darken(white, 10%);
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    .skillsets{
+        padding: 40px 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-row-gap: 2em;
+        img{
+            width: 80px;
+        }
+        text-align: center;
+
+        .skill-item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .title{
+                margin-top: 10px;
+                font-size: 13px;
+                color: darken(white, 60%);
+            }
+        }
+    }
+}
+
+.edu-card{
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 20px;
+
+    .header{
+        font-size: 20px;
+        font-weight: 300;
+        margin-bottom: 20px;
+
+        .local{
+            font-size: 14px;
+            font-weight: 400;
+            color: darken(white, 60%);
+        }
+    }
+
+    .body{
+        padding: 20px;
     }
 }

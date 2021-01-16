@@ -90,10 +90,10 @@ html, body {
 }
 
 .container {
-  overflow: auto;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  overflow: auto;
 }
 
 .content {
@@ -225,17 +225,193 @@ html, body {
 }
 
 .project-grid .project-card {
-  background-color: #3c00ff;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.project-grid .project-card .stack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.project-grid .project-card .stack .close {
+  position: absolute;
+  right: 20px;
+  width: 15px;
+  cursor: pointer;
+}
+
+.project-grid .project-card .stack h3 {
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.project-grid .project-card .stack li {
+  list-style: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.project-grid .project-card .stack li::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: black;
+  left: 0;
+  top: 8px;
+  border-radius: 4px;
+}
+
+.project-grid .project-card .stack:show {
+  visibility: visible;
+  opacity: 1;
 }
 
 .project-grid .project-card .cover {
   height: 200px;
-  background-color: white;
+  background-color: #376fc8;
 }
 
 .project-grid .project-card .context {
   padding: 20px;
 }
-/*# sourceMappingURL=style.css.map */
+
+.project-grid .project-card .title {
+  font-size: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.project-grid .project-card p {
+  color: #666666;
+}
+
+.project-grid .project-card .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
+
+.project-grid .project-card .footer .cab {
+  padding: 5px 20px;
+  font-size: 12px;
+  background-color: #dbdbdb;
+  border-radius: 20px;
+}
+
+.project-grid .project-card .footer .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.project-grid .project-card .footer .info img {
+  width: 16px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.project-grid .project-card .footer a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #376fc8;
+}
+
+.skill-card {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin-bottom: 30px;
+}
+
+.skill-card .header {
+  padding: 20px;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.skill-card .skillsets {
+  padding: 40px 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-row-gap: 2em;
+  text-align: center;
+}
+
+.skill-card .skillsets img {
+  width: 80px;
+}
+
+.skill-card .skillsets .skill-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.skill-card .skillsets .skill-item .title {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #666666;
+}
+
+.edu-card {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.edu-card .header {
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.edu-card .header .local {
+  font-size: 14px;
+  font-weight: 400;
+  color: #666666;
+}
+
+.edu-card .body {
+  padding: 20px;
+}
