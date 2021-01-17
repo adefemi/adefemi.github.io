@@ -111,6 +111,9 @@ html, body{
             font-weight: 300;
         }
     }
+    a{
+        text-decoration: none;
+    }
 
     .side-con{
         border-top: 1px solid darken(white, 10%);
@@ -340,6 +343,7 @@ html, body{
         display: flex;
         flex-direction: column;
         background-color: white;
+        
 
         .stack{
             position: absolute;
@@ -410,6 +414,7 @@ html, body{
             flex-direction: column;
             justify-content: space-between;
             flex: 1;
+            border-top: 1px solid darken($color: white, $amount: 10%);
         }
 
         .title{
